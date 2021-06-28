@@ -1,0 +1,6 @@
+{"name":"Generic Concrete Pants","department":"Toys","material":"Metal","price":"411.00","tags":["Practical","Sleek","Unbranded"]}
+{"name":"Rustic Granite Sausages","department":"Clothing","material":"Frozen","price":"472.00","tags":["Incredible","Sleek","Gorgeous","Tasty","Small"]}
+{"name":"Small Granite Ball","department":"Toys","material":"Soft","price":"293.00","tags":["Ergonomic","Licensed","Small"]}
+{"name":"Unbranded Concrete Sausages","department":"Industrial","material":"Rubber","price":"675.00","tags":["Fantastic","Fantastic","Rustic"]}
+{"name":"Practical Cotton Cheese","department":"Tools","material":"Soft","price":"665.00","tags":["Tasty","Awesome"]}
+{"name":"Unbranded Cotton Shirt","department":"Health","material":"Frozen","price":"218.00","tags":["Ergonomic","Gorgeous","Generic","Handcrafted"]}
