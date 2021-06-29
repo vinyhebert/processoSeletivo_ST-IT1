@@ -8,8 +8,7 @@ app.use(express.json())
 
 app.use('/', require('./route/authRouter'))
 app.use('/', require('./route/productsRouter'))
-/* require('./app/controllers/authController')(app) //Passando o app para o authController 
-require('./app/controllers/productController')(app) */
+
 
 
 

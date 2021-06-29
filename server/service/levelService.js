@@ -1,54 +1,48 @@
-const { access } = require('fs')
+
 const levelData = require('../data/level')
 
 
-//Permissão
-exports.authProduct = function (req, organization1) {
+//authentication rote
+exports.authProduct = function (req, res, organizationName, tag) {
     const user = userRole(req)
-    const organization = organizationP(organization1)
+    const organizationLevel = organizationP(organizationName)
 
-    console.log(user, organization)
 
     switch (user) {
         case 'junior':
             const levelJ = [2]
-            const accessJunior = levelData.AccessControl(levelJ, organization)
-            
+            const accessJunior = levelData.AccessControl(levelJ, organizationLevel, organizationName, res, tag)
+
             break;
         case 'middle':
             const levelM = [1, 2]
-            const accessM = levelData.AccessControl(levelM, organization)
+            const accessM = levelData.AccessControl(levelM, organizationLevel, organizationName, res, tag)
 
             break;
         case 'senior':
             const levelS = [0, 1, 2]
-            const accessS = levelData.AccessControl(levelS, organization)
+            const accessS = levelData.AccessControl(levelS, organizationLevel, organizationName, res, tag)
 
             break;
         case 'intern':
             const levelI = [0, 1, 2]
-            const accessI = levelData.AccessControl(levelI, organization)
+            const accessI = levelData.AccessControl(levelI, organizationLevel, organizationName, res, tag)
 
             break;
     }
 }
 
 
-//Captura role: junior, senior, intern, etc
+//role: junior, senior, intern, etc
 const userRole = function (req) {
     const id = req.userId
-
-    console.log(id)
-
     const role = levelData.rote(id)
     return role
 
 }
 
-//Captura 
-const organizationP = function (organization) {
-
-    const level = levelData.level(organization)
+//Capture
+const organizationP = function (organizationLevel) {
+    const level = levelData.level(organizationLevel)
     return level
 }
-
