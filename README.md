@@ -9,8 +9,7 @@ As dúvidas e solicitações, relacionadas ao acesso da API, podem ser enviadas 
 ## Dependências
 * Express
   - npm install Express
-* readLine
-  - npm install linebyline
+* readLine (nativo)
 * jsonwebtoken
   - npm install jsonwebtoken
 
