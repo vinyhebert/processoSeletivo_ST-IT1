@@ -101,11 +101,40 @@ Através da URL `http://localhost:3003/products/organizationName?tag=<tag1>`
     + Body
     
         { 
-          "Products"
-        }
+    		"total": <TOTAL NUMBER OF RETURNED PRODUCTS>,
+    		"products": [
+        	<PRODUCT>,
+        	<PRODUCT>,
+        	<PRODUCT>,
+        	...
+    	]
+	}
 
+Ex: URL `http://localhost:3003/products/Toys?tag=Practical`
+	
++ Response 200
 
+    + Body
+    
+        { 
+    		"total": 7,
+    		"products": [
+        		"Handmade Steel Bike",
+        		"Tasty Rubber Chips",
+        		"Practical Fresh Keyboard",
+        		"Practical Fresh Keyboard",
+        		"Sleek Fresh Computer",
+        		"Licensed Frozen Cheese",
+        		"Unbranded Frozen Mouse"
+    			]
+	}
 
+## Observações Importantes
+			
+Infelismente tive um problema com o estado da busca dos dados no arquivo products.txt, 
+que ao realizar a segunda requisição não é feito a busca linha a linha do arquivo novamente,
+impossibilitando assim a alteração do resultado.
+A alteração só é feita depois de reiniciar o servidor e executar o primeiro request com os novos parametros.
 
 
 
