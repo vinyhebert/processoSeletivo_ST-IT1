@@ -1,6 +1,5 @@
 const users = require('./users.json')
 const organizationJSON = require('./organization.json')
-const { Console } = require('console')
 
 
 
@@ -35,8 +34,8 @@ exports.AccessControl = function (level, organization ) {
     const filter = arrayFilter[1]
     if ( filter >= 1) {
         //função de busca
-        return console.log('Você tem acesso')
+        return console.log({'Alert':'Acesso não pode ser autorizado'})
     } else {
-         return console.log('Você não tem acesso')
+         return console.log({'Alert':'Acesso não pode ser autorizado'})
     }
 }

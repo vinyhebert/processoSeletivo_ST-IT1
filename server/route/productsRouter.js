@@ -13,7 +13,8 @@ router.get('/products/:organizationName', async function (req, res) {
     const tag = req.query["tag"]
     const authProduct = productRouter.authProduct(req, organization.organizationName)
     const product = productsSevice.returnProducts(organization.organizationName,tag,res)
-    console.log(product)
+    
+    /* console.log(product) */
 })
 
 

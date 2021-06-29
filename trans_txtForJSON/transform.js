@@ -1,13 +1,17 @@
 const fs = require('fs')
 const path = require('path')
 const readLine = require('readline') //Faz a leitura linha a linha
+const express = require('express')
 
+const app = express()
+
+app.use(express.json())
 
 
 const readable = fs.createReadStream(__dirname + '/test.txt')
-
-
-
+const prod = []
+app.get('/products/:organizationName', async function (req, res) {
+console.log('começou')
 /*
 Trabalhando com Strems 
 o q é? Uma maneira de processar um volume grande de dados aos poucos
@@ -32,17 +36,32 @@ A midida que o string consele ler os dados ele envia automa
 let line1 = readLine.createInterface({
     input: readable,
     output: process.stdout,
-    terminal: false
+    terminal: false,
 })
-line1.on('line', function (line) {
-    /* console.log(line) */
-    let res = JSON.parse(line)
-    const departament = res.department
-    if (departament == 'Toys') {
-        console.log(res.name)
+/* console.log(line1) */
+await line1.on('line', function (line) {
+    if(!line){
+        console.log(line)
+        let res = JSON.parse(line)
+        const departament = res.department
+        if (departament == 'Toys') {
+            console.log(res.name)
+            prod.push(res.name)
+            console.log(prod)
+            line = null
+    }else {
+            line = null
+        }
+        
     }
+    line1.pause()
+    line1.on('history', (history) => {
+        console.log(`Received: ${history}`)
+      });
+  /*   res.send (prod) */
 })
-
+})
+    
 
 /* readable.on('readable', ()=> {
     while(chunk = readable.read()){
@@ -58,3 +77,5 @@ line1.on('line', function (line) {
 console.log(res) */
 /*     }
 }) */
+
+app.listen(3004)

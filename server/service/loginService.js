@@ -29,7 +29,6 @@ exports.login = function ( email, password, res) {
     
     
     const id = user[0].userId
-    console.log("teste "+id)
     
     
     const token = {token: genereteToken({id: id})}
