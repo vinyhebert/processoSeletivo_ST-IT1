@@ -1,12 +1,12 @@
 # processoSeletivo_ST-IT1
 
-#API ST IT
+# API ST IT
 
 O API ST IT foi disponibiliza para vendedores obterem acesso aos produtos do sistema conforme o seu nivel de acesso.
 
 As dúvidas e solicitações, relacionadas ao acesso da API, podem ser enviadas para o e-mail corevinicius@gmail.com.
 
-##Dependências
+## Dependências
 * Express
   - npm install Express
 * readLine
